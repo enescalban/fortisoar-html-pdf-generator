@@ -1,0 +1,3 @@
+# No third-party Python packages are required.
+# The connector shells out to one of the following system tools (tried in this order):
+#   wkhtmltopdf, Chromium / Google Chrome, Pandoc (+ xelatex), LibreOffice

@@ -1,0 +1,140 @@
+{
+    "name": "HTMLPDFGenerator",
+    "version": "2.2.0",
+    "label": "HTML PDF Generator",
+    "description": "Utility connector that converts HTML or Rich Text content into a standalone PDF file on the FortiSOAR appliance. Supports page size, orientation and margins, and automatically falls back between wkhtmltopdf, Chromium, Pandoc and LibreOffice.",
+    "publisher": "Community",
+    "cs_approved": false,
+    "cs_compatible": true,
+    "icon_small_name": "connector_logo_small.png",
+    "icon_large_name": "connector_logo_large.png",
+    "category": [
+        "Compliance and Reporting",
+        "Utilities"
+    ],
+    "tags": [
+        "PDF",
+        "HTML",
+        "Report",
+        "Utilities"
+    ],
+    "configuration": {
+        "fields": []
+    },
+    "operations": [
+        {
+            "operation": "build_pdf_document",
+            "title": "Build PDF Document",
+            "description": "Converts HTML or Rich Text content into a PDF file and returns its path so the next playbook step can attach or upload it.",
+            "category": "utilities",
+            "annotation": "build_pdf_document",
+            "is_config_required": false,
+            "enabled": true,
+            "visible": true,
+            "output_schema": {
+                "status": "",
+                "_cyops_filepath": "",
+                "file_path": "",
+                "file_name": "",
+                "mime_type": "",
+                "pdf_size_bytes": 0,
+                "engine": "",
+                "page_size": "",
+                "orientation": ""
+            },
+            "parameters": [
+                {
+                    "title": "Data for PDF",
+                    "name": "dataForPDF",
+                    "type": "textarea",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "tooltip": "HTML or Rich Text content to convert. A fragment is automatically wrapped in a full HTML document.",
+                    "description": "HTML or Rich Text content to convert. HTML fragments are wrapped in a full UTF-8 document automatically; JSON objects are rendered as formatted text."
+                },
+                {
+                    "title": "File Name",
+                    "name": "fileName",
+                    "type": "text",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "report.pdf",
+                    "tooltip": "Name of the generated file. The .pdf extension is added if missing.",
+                    "description": "Name of the generated PDF file. Unsafe characters are replaced with underscores and the .pdf extension is added if missing."
+                },
+                {
+                    "title": "Page Size",
+                    "name": "pageSize",
+                    "type": "select",
+                    "options": ["A4", "A3", "A5", "Letter", "Legal"],
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "A4",
+                    "tooltip": "Paper size of the generated PDF.",
+                    "description": "Paper size of the generated PDF."
+                },
+                {
+                    "title": "Orientation",
+                    "name": "orientation",
+                    "type": "select",
+                    "options": ["Portrait", "Landscape"],
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "Portrait",
+                    "tooltip": "Page orientation of the generated PDF.",
+                    "description": "Page orientation of the generated PDF."
+                },
+                {
+                    "title": "Margin",
+                    "name": "margin",
+                    "type": "text",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "0.75in",
+                    "tooltip": "Page margin applied to all sides, e.g. 20mm, 2cm or 0.75in.",
+                    "description": "Page margin applied to all four sides. Use a number followed by mm, cm or in (e.g. 20mm, 2cm, 0.75in)."
+                },
+                {
+                    "title": "Conversion Engine",
+                    "name": "engine",
+                    "type": "select",
+                    "options": ["Auto", "wkhtmltopdf", "Chromium", "Pandoc", "LibreOffice"],
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": "Auto",
+                    "tooltip": "Rendering engine. Auto tries every installed engine in order until one succeeds.",
+                    "description": "Rendering engine to use. Auto tries wkhtmltopdf, Chromium, Pandoc and LibreOffice in that order and uses the first one that succeeds. Choose Chromium for the best modern CSS support."
+                },
+                {
+                    "title": "Timeout (seconds)",
+                    "name": "timeout",
+                    "type": "integer",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": 120,
+                    "tooltip": "Maximum time allowed for each engine attempt (1-900).",
+                    "description": "Maximum number of seconds allowed for each engine attempt (1-900)."
+                },
+                {
+                    "title": "Allow Local File Access",
+                    "name": "allowLocalFileAccess",
+                    "type": "checkbox",
+                    "required": false,
+                    "visible": true,
+                    "editable": true,
+                    "value": false,
+                    "tooltip": "Allow the HTML to load local files (e.g. images under /tmp). Keep disabled for untrusted content.",
+                    "description": "Allows the HTML to reference files on the FortiSOAR appliance (for example file:///tmp/logo.png) when using wkhtmltopdf. Keep disabled when the HTML may contain untrusted data such as alert or email content."
+                }
+            ],
+            "open": false
+        }
+    ]
+}

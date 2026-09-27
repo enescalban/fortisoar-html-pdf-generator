@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#1e3a8a"/>
+    </linearGradient>
+  </defs>
+  <rect x="0.5" y="0.5" width="31" height="31" rx="7" fill="url(#bg)"/>
+  <path d="M9.5 4 H19 L24 9 V26.5 a1.5 1.5 0 0 1 -1.5 1.5 H9.5 a1.5 1.5 0 0 1 -1.5 -1.5 V5.5 a1.5 1.5 0 0 1 1.5 -1.5 Z" fill="#f8fafc"/>
+  <path d="M19 4 V7.5 a1.5 1.5 0 0 0 1.5 1.5 H24 Z" fill="#cbd5e1"/>
+  <g fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="13.2,9.5 10.8,12 13.2,14.5"/>
+    <polyline points="18.8,9.5 21.2,12 18.8,14.5"/>
+  </g>
+  <rect x="5" y="17.5" width="22" height="8" rx="2" fill="#dc2626"/>
+  <text x="16" y="24" text-anchor="middle" font-family="DejaVu Sans" font-weight="bold" font-size="7" fill="#ffffff">PDF</text>
+</svg>

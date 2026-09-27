@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="rb" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ef4444"/>
+      <stop offset="1" stop-color="#b91c1c"/>
+    </linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0b1220" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect x="3" y="3" width="94" height="94" rx="22" fill="url(#bg)"/>
+  <g filter="url(#sh)">
+    <path d="M31 14 H61 L75 28 V82 a4 4 0 0 1 -4 4 H31 a4 4 0 0 1 -4 -4 V18 a4 4 0 0 1 4 -4 Z" fill="#f8fafc"/>
+  </g>
+  <path d="M61 14 V24 a4 4 0 0 0 4 4 H75 Z" fill="#cbd5e1"/>
+  <g fill="none" stroke="#2563eb" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="42,33 35,40 42,47"/>
+    <polyline points="60,33 67,40 60,47"/>
+    <line x1="54" y1="31" x2="48" y2="49"/>
+  </g>
+  <g filter="url(#sh)">
+    <rect x="18" y="57" width="64" height="21" rx="5" fill="url(#rb)"/>
+  </g>
+  <text x="50" y="73" text-anchor="middle" font-family="DejaVu Sans" font-weight="bold" font-size="15" letter-spacing="1.5" fill="#ffffff">PDF</text>
+</svg>
